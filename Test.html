@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+//gs.prdMainController.js
+<script type="text/javascript" src="prdMainController.js"></script>
+<script type="text/javascript" src="prdOrderModule.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+    welcome();
+</script>
+<ul id = "aa">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+</ul>
+<input type="button" value="aa" id="ex_bn" />
+<script>
+    $('#ex_bn').click(function () {
+        $('#aa li').text("y");
+    })
+</script>
+<!--<script>-->
+<!--    (function (doc, global, gs) {-->
+<!--        console.log(d);-->
+<!--        alert('a');-->
+<!--        var prdmodule = function () {-->
+<!--            var that = this;-->
+<!--            that.dealData = null;-->
+<!--        }-->
+<!--        gs.prd = prdmodule;-->
+<!--    })(document, window, (window.gs = window.gs || {}));-->
+<!--</script>-->
+
+</body>
+</html>
