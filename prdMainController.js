@@ -5,3 +5,6 @@
 function welcome() {
     alert('b');
 }
+function welcome1() {
+    alert('b');
+}
