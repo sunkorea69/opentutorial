@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 	<meta charset="UTF-8">
@@ -29,7 +29,7 @@
 		obj.b.apply({ a: 'b' });
 
 		var callback = function () {
-			console.dir(this);
+			console.log('1', this);
 		}
 		var obj = {
 			a: 1
@@ -41,19 +41,26 @@
 		document.body.innerHTML += '<div id = "a">클릭하세요</div>';
 		var obj = { a: 1 };
 		document.getElementById('a').addEventListener('click', function (e) { 
-			console.log(e, this);
+			console.log(e, this.textContent, this.textContent);
 		});
-		//test
-		//test055
-		//코딩완료
-		//sta
-		//st
-		//sta
-		//sta
-		//sta
-		//sta
-		//sta
-		//sta
+		var relationship1 = {
+			name:'zero',
+			friends:['nero','hero'],
+			logFriends:function() {
+				var that = this;
+				this.friends.forEach(function (friend) {
+					console.log(this);
+				});
+			}
+		}
+		relationship1.logFriends();
+		var Human = function () {
+			this.aa = 'a';
+			this.ba = 'b';
+		}
+		Human.prototype.cc = this.aa;
+		var h = new Human();
+
 	</script>
 </body>
 
