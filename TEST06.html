@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<table id="outside">
+		<tr><td id="t1">one</td></tr>
+		<tr><td id="t2">two</td></tr>
+	    </table>
+	<script>
+		var a = 10;
+		var obj = {
+			a: 'a',
+			b: function () {
+				var self = this;
+				console.log(this.a);
+				function c() {
+					console.log(self.a);
+				}
+				c();
+			}
+		}
+		obj.b.apply({ a: 'b' });
+
+		var callback = function () {
+			console.log('1', this);
+		}
+		var obj = {
+			a: 1
+		}
+		setTimeout(() => {
+			callback();
+			// callback.call(obj);	
+		}, 1000);
+		document.body.innerHTML += '<div id = "a">클릭하세요</div>';
+		var obj = { a: 1 };
+		document.getElementById('a').addEventListener('click', function (e) { 
+			console.log(e, this.textContent, this.textContent);
+		});
+		var relationship1 = {
+			name:'zero',
+			friends:['nero','hero'],
+			logFriends:function() {
+				var that = this;
+				this.friends.forEach(function (friend) {
+					console.log(this);
+				});
+			}
+		}
+		relationship1.logFriends();
+		var Human = function () {
+			this.aa = 'a';
+			this.ba = 'b';
+		}
+		Human.prototype.cc = this.aa;
+		var h = new Human();
+
+	</script>
+</body>
+
+</html>
